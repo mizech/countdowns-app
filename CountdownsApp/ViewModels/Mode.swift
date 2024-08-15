@@ -1,6 +1,6 @@
 import Foundation
 
 enum Mode: String {
-    case add = "Add"
+    case add = "Add Event"
     case edit = "Edit"
 }

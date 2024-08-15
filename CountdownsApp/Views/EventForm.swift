@@ -5,6 +5,7 @@ struct EventForm: View {
     @Environment(EventsViewModel.self) var eventsVM
     
     @State var event = Event(title: "", date: .now, textColor: .gray)
+    @State var givenTitle = ""
     var mode: Mode
     var index: Int? = nil
     
@@ -14,7 +15,7 @@ struct EventForm: View {
             DatePicker("Date", selection: $event.date, displayedComponents: [.date, .hourAndMinute])
             ColorPicker("Color", selection: $event.textColor)
         }
-        .navigationTitle("\(mode.rawValue)")
+        .navigationTitle(givenTitle.isEmpty ? "Add" : givenTitle)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
@@ -28,6 +29,7 @@ struct EventForm: View {
         .onAppear {
             if let index = index {
                 self.event = eventsVM.events[index]
+                self.givenTitle = "\(Mode.edit.rawValue) \(event.title)"
             }
         }
     }
