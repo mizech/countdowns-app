@@ -4,7 +4,7 @@ import SwiftUI
 struct CountdownsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            EventsView()
         }
     }
 }
