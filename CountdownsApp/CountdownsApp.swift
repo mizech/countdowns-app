@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct CountdownsAppApp: App {
+struct CountdownsApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
