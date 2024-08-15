@@ -12,6 +12,10 @@ struct EventsView: View {
                     } label: {
                         EventRow(index: index)
                     }
+                }.onDelete { indexSet in
+                    for index in indexSet {
+                        eventsVM.events.remove(at: index)
+                    }
                 }
             }
             .toolbar { 
