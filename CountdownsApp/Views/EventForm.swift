@@ -5,7 +5,7 @@ struct EventForm: View {
     @Environment(EventsViewModel.self) var eventsVM
     
     @State var event = Event(title: "", date: .now, textColor: .gray)
-    var title: String
+    var mode: Mode
     var index: Int? = nil
     
     var body: some View {
@@ -14,12 +14,12 @@ struct EventForm: View {
             DatePicker("Date", selection: $event.date, displayedComponents: [.date, .hourAndMinute])
             ColorPicker("Color", selection: $event.textColor)
         }
-        .navigationTitle("\(title)")
+        .navigationTitle("\(mode.rawValue)")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {
-                    onSave()
+                    onSave(event: self.event)
                 }, label: {
                     Label("Submit", systemImage: "checkmark")
                 })
@@ -32,17 +32,18 @@ struct EventForm: View {
         }
     }
     
-    func onSave() {
+    func onSave(event: Event) {
         guard event.title.isEmpty == false else {
             return
         }
         
-        if title == "Edit" {
-            if let index = index {
-                eventsVM.events[index] = event
-            }
-        } else {
-            eventsVM.appendEvent(event: event)
+        switch mode {
+            case .edit:
+                if let index = index {
+                    eventsVM.events[index] = event
+                }
+            default:
+                eventsVM.appendEvent(event: event)
         }
         
         dismiss()
@@ -50,5 +51,5 @@ struct EventForm: View {
 }
 
 #Preview {
-    EventForm(title: "Edit")
+    EventForm(mode: Mode.add)
 }

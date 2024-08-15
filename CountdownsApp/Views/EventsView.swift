@@ -8,7 +8,7 @@ struct EventsView: View {
             List {
                 ForEach(0..<eventsVM.events.count, id: \.self) { index in
                     NavigationLink {
-                        EventForm(title: "Edit", index: index)
+                        EventForm(mode: Mode.edit, index: index)
                     } label: {
                         EventRow(event: eventsVM.events[index])
                     }
@@ -17,7 +17,7 @@ struct EventsView: View {
             .toolbar { 
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink {
-                        EventForm(title: "Add")
+                        EventForm(mode: Mode.add)
                     } label: {
                         Label("Add", systemImage: "plus")
                     }

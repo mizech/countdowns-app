@@ -15,6 +15,7 @@
 		4C8CF53F2C6DF15600DB0F2C /* EventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CF53E2C6DF15600DB0F2C /* EventRow.swift */; };
 		4C8CF5412C6DF16900DB0F2C /* EventForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CF5402C6DF16900DB0F2C /* EventForm.swift */; };
 		4C8CF5432C6DF3E000DB0F2C /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CF5422C6DF3E000DB0F2C /* EventsViewModel.swift */; };
+		4C8CF5452C6E1B4300DB0F2C /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CF5442C6E1B4300DB0F2C /* Mode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		4C8CF53E2C6DF15600DB0F2C /* EventRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRow.swift; sourceTree = "<group>"; };
 		4C8CF5402C6DF16900DB0F2C /* EventForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventForm.swift; sourceTree = "<group>"; };
 		4C8CF5422C6DF3E000DB0F2C /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
+		4C8CF5442C6E1B4300DB0F2C /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				4C8CF5422C6DF3E000DB0F2C /* EventsViewModel.swift */,
+				4C8CF5442C6E1B4300DB0F2C /* Mode.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				4C8CF5432C6DF3E000DB0F2C /* EventsViewModel.swift in Sources */,
 				4C8CF52C2C6DEE8700DB0F2C /* CountdownsApp.swift in Sources */,
 				4C8CF53F2C6DF15600DB0F2C /* EventRow.swift in Sources */,
+				4C8CF5452C6E1B4300DB0F2C /* Mode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
