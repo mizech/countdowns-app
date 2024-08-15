@@ -1,11 +1,18 @@
 import SwiftUI
 
 struct EventRow: View {
+    var event: Event
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading) {
+            Text(event.title)
+                .font(.headline)
+                .foregroundStyle(event.textColor)
+            Text("\(event.date)")
+        }
     }
 }
 
 #Preview {
-    EventRow()
+    EventRow(event: Event(title: "Halloween", date: Date.now, textColor: .orange))
 }

@@ -1,14 +1,22 @@
 import SwiftUI
 
 struct EventsView: View {
+    @State var eventVM = EventsViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            List {
+                ForEach(eventVM.events) { event in
+                    NavigationLink {
+                        EventForm()
+                    } label: {
+                        EventRow(event: event)
+                    }
+                }
+            }
+            .listStyle(.plain)
+            .padding()
         }
-        .padding()
     }
 }
 
