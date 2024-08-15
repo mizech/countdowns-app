@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 
 struct Event: Comparable, Identifiable {
-    var id = UUID()
+    let id = UUID()
     var title: String
     var date: Date
     var textColor: Color
@@ -12,6 +12,8 @@ struct Event: Comparable, Identifiable {
     }
     
     static func == (lhs: Event, rhs: Event) -> Bool {
-        lhs.title == rhs.title && lhs.date == rhs.date
+        lhs.title == rhs.title
+            && lhs.date == rhs.date
+            && lhs.textColor == rhs.textColor
     }
 }
