@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C8CF52C2C6DEE8700DB0F2C /* CountdownsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CF52B2C6DEE8700DB0F2C /* CountdownsAppApp.swift */; };
+		4C8CF52C2C6DEE8700DB0F2C /* CountdownsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CF52B2C6DEE8700DB0F2C /* CountdownsApp.swift */; };
 		4C8CF52E2C6DEE8700DB0F2C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CF52D2C6DEE8700DB0F2C /* ContentView.swift */; };
 		4C8CF5302C6DEE8800DB0F2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C8CF52F2C6DEE8800DB0F2C /* Assets.xcassets */; };
 		4C8CF5332C6DEE8800DB0F2C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C8CF5322C6DEE8800DB0F2C /* Preview Assets.xcassets */; };
@@ -15,7 +15,7 @@
 
 /* Begin PBXFileReference section */
 		4C8CF5282C6DEE8700DB0F2C /* CountdownsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountdownsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C8CF52B2C6DEE8700DB0F2C /* CountdownsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownsAppApp.swift; sourceTree = "<group>"; };
+		4C8CF52B2C6DEE8700DB0F2C /* CountdownsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownsApp.swift; sourceTree = "<group>"; };
 		4C8CF52D2C6DEE8700DB0F2C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4C8CF52F2C6DEE8800DB0F2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C8CF5322C6DEE8800DB0F2C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -51,7 +51,7 @@
 		4C8CF52A2C6DEE8700DB0F2C /* CountdownsApp */ = {
 			isa = PBXGroup;
 			children = (
-				4C8CF52B2C6DEE8700DB0F2C /* CountdownsAppApp.swift */,
+				4C8CF52B2C6DEE8700DB0F2C /* CountdownsApp.swift */,
 				4C8CF52D2C6DEE8700DB0F2C /* ContentView.swift */,
 				4C8CF52F2C6DEE8800DB0F2C /* Assets.xcassets */,
 				4C8CF5312C6DEE8800DB0F2C /* Preview Content */,
@@ -138,7 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C8CF52E2C6DEE8700DB0F2C /* ContentView.swift in Sources */,
-				4C8CF52C2C6DEE8700DB0F2C /* CountdownsAppApp.swift in Sources */,
+				4C8CF52C2C6DEE8700DB0F2C /* CountdownsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

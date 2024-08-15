@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  CountdownsApp
-//
-//  Created by Michael on 15.08.24.
-//
-
 import SwiftUI
 
 struct ContentView: View {
