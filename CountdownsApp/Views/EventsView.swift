@@ -10,7 +10,7 @@ struct EventsView: View {
                     NavigationLink {
                         EventForm(mode: Mode.edit, index: index)
                     } label: {
-                        EventRow(event: eventsVM.events[index])
+                        EventRow(index: index)
                     }
                 }
             }

@@ -1,19 +1,31 @@
 import SwiftUI
 
 struct EventRow: View {
-    var event: Event
+    @Environment(EventsViewModel.self) var eventsVM
+    var index: Int
+    
+    @State public var event = Event(title: "", date: .now, textColor: .gray)
+    @State var currDate = Date.now
+    
     let formatter = RelativeDateTimeFormatter()
+    var timer = Timer.publish(every: 15, on: .main, in: .common).autoconnect()
     
     var body: some View {
         VStack(alignment: .leading) {
             Text(event.title)
                 .font(.headline)
                 .foregroundStyle(event.textColor)
-            Text(formatter.localizedString(for: event.date, relativeTo: Date.now))
+            Text(formatter.localizedString(for: event.date, relativeTo: currDate))
+        }
+        .onReceive(timer, perform: { input in
+            currDate = input
+        })
+        .onAppear {
+            self.event = eventsVM.events[index]
         }
     }
 }
 
 #Preview {
-    EventRow(event: Event(title: "Halloween", date: Date.now, textColor: .orange))
+    EventRow(index: 1)
 }
