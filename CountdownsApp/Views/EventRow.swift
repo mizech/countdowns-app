@@ -8,7 +8,11 @@ struct EventRow: View {
     @State var currDate = Date.now
     
     let formatter = RelativeDateTimeFormatter()
-    var timer = Timer.publish(every: 15, on: .main, in: .common).autoconnect()
+    private var timer = Timer.publish(every: 15, on: .main, in: .common).autoconnect()
+    
+    public init(index: Int) {
+        self.index = index
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
