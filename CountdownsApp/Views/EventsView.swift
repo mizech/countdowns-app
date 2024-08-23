@@ -18,12 +18,16 @@ struct EventsView: View {
                 }
             }
             .navigationDestination(for: Int.self, destination: { index in
-                EventForm(mode: Mode.edit, index: index)
+                EventForm(mode: Mode.edit, index: index) { event in
+                    eventsVM.events[index] = event
+                }
             })
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink {
-                        EventForm(mode: Mode.add)
+                        EventForm(mode: Mode.add) { event in
+                            eventsVM.appendEvent(event: event)
+                        }
                     } label: {
                         Label("Add", systemImage: "plus")
                     }

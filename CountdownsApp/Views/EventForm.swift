@@ -8,6 +8,7 @@ struct EventForm: View {
     @State var givenTitle = ""
     var mode: Mode
     var index: Int? = nil
+    let onSave: (Event) -> Void
     
     var body: some View {
         Form {
@@ -20,7 +21,12 @@ struct EventForm: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {
-                    onSave(event: self.event)
+                    guard event.title.isEmpty == false else {
+                        return
+                    }
+                    
+                    onSave(self.event)
+                    dismiss()
                 }, label: {
                     Label("Submit", systemImage: "checkmark")
                 })
@@ -33,25 +39,8 @@ struct EventForm: View {
             }
         }
     }
-    
-    func onSave(event: Event) {
-        guard event.title.isEmpty == false else {
-            return
-        }
-        
-        switch mode {
-            case .edit:
-                if let index = index {
-                    eventsVM.events[index] = event
-                }
-            default:
-                eventsVM.appendEvent(event: event)
-        }
-        
-        dismiss()
-    }
 }
 
 #Preview {
-    EventForm(mode: Mode.add)
+    EventForm(mode: Mode.add, onSave: { _ in })
 }
