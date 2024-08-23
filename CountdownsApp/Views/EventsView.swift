@@ -7,18 +7,20 @@ struct EventsView: View {
         NavigationStack {
             List {
                 ForEach(0..<eventsVM.events.count, id: \.self) { index in
-                    NavigationLink {
-                        EventForm(mode: Mode.edit, index: index)
-                    } label: {
+                    NavigationLink(value: index) {
                         EventRow(index: index)
                     }
-                }.onDelete { indexSet in
+                }
+                .onDelete { indexSet in
                     for index in indexSet {
                         eventsVM.events.remove(at: index)
                     }
                 }
             }
-            .toolbar { 
+            .navigationDestination(for: Int.self, destination: { index in
+                EventForm(mode: Mode.edit, index: index)
+            })
+            .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink {
                         EventForm(mode: Mode.add)
